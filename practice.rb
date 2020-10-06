@@ -114,7 +114,7 @@ item_amounts[:chair] -= 2
 # The final result should be: {chair: 5, table: 2, desk: 7}
 item_amounts = {chair: 5, :table => 2}
 item_amounts[:desk] = 7
-p item_amounts
+# p item_amounts
 
 # Write a method that accepts a number and returns its factorial.
 # For example, the factorial of 5 is 5 * 4 * 3 * 2 * 1 = 120.
@@ -153,7 +153,7 @@ def select_even_items(strings)
   end
   result
 end
-p select_even_items(["a", "b", "c", "d", "e", "f"])
+# p select_even_items(["a", "b", "c", "d", "e", "f"])
 
 # Write a method that accepts one argument - an array of numbers. The method should return the greatest number. For example, if the input is [5, 4, 8, 1, 2], the output should be 8.
 def max(numbers)
@@ -165,7 +165,7 @@ def max(numbers)
   end
   current_max
 end
-p max([5, 4, 8, 1, 2])
+# p max([5, 4, 8, 1, 2])
 
 # Write a method that accepts a number and returns its factorial. For example, the factorial of 5 is 5 * 4 * 3 * 2 * 1 = 120.
 def factorial(number)
@@ -177,7 +177,7 @@ def factorial(number)
   end
   result
 end
-p factorial(5)
+# p factorial(5)
 
 # Write a method that accepts one argument - an array of numbers that are in ascending order. The method that returns a new array with the same values in descending order. However, do not use the "reverse" method built into Ruby.
 def descending(numbers)
@@ -189,7 +189,7 @@ def descending(numbers)
   end
   result
 end
-p descending([1, 3, 5, 7])
+# p descending([1, 3, 5, 7])
 
 # Write a method that accepts two arrays of numbers, and returns an array of every sum of every combination of single numbers from the first and second array. For example, if the method receives [1, 5, 10] and [100, 500, 1000], the method should return this array: [101, 501, 1001, 105, 505, 1005, 110, 510, 1010].
 def sum_combinations(numbers1, numbers2)
@@ -201,4 +201,97 @@ def sum_combinations(numbers1, numbers2)
   end
   result
 end
-p sum_combinations([1, 5, 10], [100, 500, 1000])
+# p sum_combinations([1, 5, 10], [100, 500, 1000])
+
+# 1. Write a function that takes in an array of numbers and returns its sum.
+def sum(numbers)
+  result = 0
+  numbers.each do |num|
+    result += num
+  end
+  result
+end
+
+# p sum([1, 2, 3])
+
+
+# 2. Write a function that takes in an array of strings and returns the smallest string.
+def smallest_string(strings)
+  smallest = strings[0]
+  strings.each do |string|
+    if string.length < smallest.length
+      smallest = string
+    end
+  end
+  smallest
+end
+# p smallest_string(["apple", "banana", "orange", "kiwi"])
+
+
+# 3. Write a function that takes in an array of numbers and returns a new array with the numbers in reverse order.
+# 4. Write a function that takes in an array of words and returns the number of words that begin with the letter “a”.
+def a_words(words)
+  count = 0
+  index = 0
+  while index < words.length
+    if words[index][0] == "a"
+      count += 1
+    end
+    index += 1
+  end
+  count
+end
+# p a_words(["apple", "banana", "apricot", "kiwi"])
+
+
+# 5. Write a function that takes in an array of strings and joins them together to make a single string separated by commas.
+def frankenstring(strings)
+  result = ""
+  strings.each do |string|
+    result += "#{string},"
+  end
+  result.chop
+end
+# p frankenstring(["apple", "banana", "apricot", "kiwi"])
+
+# 6. Write a function that takes in an array of numbers and returns the product of all the numbers (each number multiplied by each other). 
+def product(numbers)
+  result = 1
+  numbers.each do |number|
+    result *= number
+  end
+  result
+end
+# p product([1, 2, 4, 5])
+
+
+# 7. Write a function that takes in an array of numbers and returns the two smallest numbers.
+def two_smallest(numbers)
+  smallest_index = 0
+  smallest = numbers[smallest_index]
+  i = 0
+  while i < numbers.length
+    if numbers[i] < smallest
+      smallest = numbers[i]
+      smallest_index = i
+    end
+    i += 1
+  end 
+  numbers.delete_at(smallest_index)
+  i = 0
+  second_smallest = numbers[i]
+  while i < numbers.length 
+    if numbers[i] < second_smallest
+      second_smallest = numbers[i]
+    end
+    i += 1
+  end
+  [smallest, second_smallest]
+end
+
+# p two_smallest([3, 23, 12, 10, 5, 9, 6])
+
+
+# 8. Write a function that takes in an array of numbers and returns a count of how many zeros are in the array.
+# 9. Write a function that takes in an array of numbers and returns true if all the numbers are bigger than 10, otherwise returns false.
+# 10. Write a function that takes in an array of words and returns the number of times the letter “a” appeared in total.

@@ -160,9 +160,117 @@ function max(numbers) {
 // # Write a method that accepts a number and returns its factorial.For example, the factorial of 5 is 5 * 4 * 3 * 2 * 1 = 120.
 function factorial(number) {
   var result = 1;
-  for (var i = number; i > 1; i--) {
-    result = result * i;
+  for (number; number > 1; number--) {
+    result = result * number;
   }
   return result;
 }
 // console.log(factorial(5));
+
+// # Write a method that accepts one argument - an array of numbers that are in ascending order.The method that returns a new array with the same values in descending order.However, do not use the "reverse" method built into Ruby.
+function descending(numbers) {
+  var result = [];
+  for (var i = numbers.length - 1; i >= 0; i--) {
+    result.push(numbers[i]);
+  }
+  return result;
+}
+// console.log(descending([1, 3, 5, 7]));
+
+// # Write a method that accepts two arrays of numbers, and returns an array of every sum of every combination of single numbers from the first and second array.For example, if the method receives[1, 5, 10] and[100, 500, 1000], the method should return this array: [101, 501, 1001, 105, 505, 1005, 110, 510, 1010].
+function sumCombinations(numbers1, numbers2) {
+  var result = [];
+  numbers1.forEach(function (number1) {
+    numbers2.forEach(function (number2) {
+      result.push(number1 + number2);
+    });
+  });
+  return result;
+}
+// console.log(sumCombinations([1, 5, 10], [100, 500, 1000]));
+
+// 1. Write a function that takes in an array of numbers and returns its sum.
+function sum(numbers) {
+  var result = 0;
+  numbers.forEach(function (num) {
+    result += num;
+  });
+  return result;
+}
+// console.log(sum([1, 2, 3]));
+
+// 2. Write a function that takes in an array of strings and returns the smallest string.
+function smallestString(strings) {
+  var smallest = strings[0];
+  strings.forEach(function (string) {
+    if (string.length < smallest.length) {
+      smallest = string;
+    }
+  });
+  return smallest;
+}
+// console.log(smallestString(["apple", "banana", "orange", "kiwi"]));
+
+// 3. Write a function that takes in an array of numbers and returns a new array with the numbers in reverse order.
+// 4. Write a function that takes in an array of words and returns the number of words that begin with the letter “a”.
+function aWords(words) {
+  var count = 0;
+  var index = 0;
+  while (index < words.length) {
+    if (words[index][0] === "a") {
+      count++;
+    }
+    index++;
+  }
+  return count;
+}
+// console.log(aWords(["apple", "banana", "apricot", "kiwi"]));
+
+// 5. Write a function that takes in an array of strings and joins them together to make a single string separated by commas.
+function frankenstring(strings) {
+  var result = "";
+  strings.forEach(function (string) {
+    result += `${string},`;
+  });
+  return result.slice(0, -1);
+}
+// console.log(frankenstring(["apple", "banana", "apricot", "kiwi"]));
+
+// 6. Write a function that takes in an array of numbers and returns the product of all the numbers(each number multiplied by each other).
+function product(numbers) {
+  var result = 1;
+  numbers.forEach(function (number) {
+    result *= number;
+  });
+  return result;
+}
+// console.log(product([1, 2, 4, 5]));
+
+// 7. Write a function that takes in an array of numbers and returns the two smallest numbers.
+function twoSmallest(numbers) {
+  var smallestIndex = 0;
+  var smallest = numbers[smallestIndex];
+  var i = 0;
+  while (i < numbers.length) {
+    if (numbers[i] < smallest) {
+      smallest = numbers[i];
+      smallestIndex = i;
+    }
+    i++;
+  }
+  numbers.splice(smallestIndex, 1);
+  i = 0;
+  var secondSmallest = numbers[i];
+  while (i < numbers.length) {
+    if (numbers[i] < secondSmallest) {
+      secondSmallest = numbers[i];
+    }
+    i++;
+  }
+  return [smallest, secondSmallest];
+}
+// console.log(twoSmallest([3, 23, 12, 10, 5, 9, 6]));
+
+// 8. Write a function that takes in an array of numbers and returns a count of how many zeros are in the array.
+// 9. Write a function that takes in an array of numbers and returns true if all the numbers are bigger than 10, otherwise returns false.
+// 10. Write a function that takes in an array of words and returns the number of times the letter “a” appeared in total.
