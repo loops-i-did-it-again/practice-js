@@ -293,5 +293,53 @@ end
 
 
 # 8. Write a function that takes in an array of numbers and returns a count of how many zeros are in the array.
+def zero_count(numbers)
+  result = 0
+  index = 0
+  while index < numbers.length
+    if numbers[index] == 0
+      result += 1
+    end
+    index += 1
+  end
+  result
+end
+
+p zero_count([9, 32, 0, 2, 0, 12, 5, 2, 0, 1])
+
+
 # 9. Write a function that takes in an array of numbers and returns true if all the numbers are bigger than 10, otherwise returns false.
+def is_all_big(numbers)
+  result = true
+  index = 0
+  while index < numbers.length
+    if numbers[index] <= 10
+      result = false
+    end
+    index += 1
+  end
+  result
+end
+
+p is_all_big([11, 23, 32])
+
+
 # 10. Write a function that takes in an array of words and returns the number of times the letter “a” appeared in total.
+def a_count(words)
+  result = 0
+  index = 0
+  while index < words.length
+    word = words[index]
+    index2 = 0
+    while index2 < word.length
+      if word[index2] == "a"
+        result += 1
+      end
+      index2 += 1
+    end
+    index += 1
+  end
+  result
+end
+
+p a_count(["apple", "orange", "grapes"])

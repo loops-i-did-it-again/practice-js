@@ -272,5 +272,50 @@ function twoSmallest(numbers) {
 // console.log(twoSmallest([3, 23, 12, 10, 5, 9, 6]));
 
 // 8. Write a function that takes in an array of numbers and returns a count of how many zeros are in the array.
+function zeroCount(numbers) {
+  var result = 0;
+  var index = 0;
+  while (index < numbers.length) {
+    if (numbers[index] === 0) {
+      result += 1;
+    }
+    index += 1;
+  }
+  return result;
+}
+console.log(zeroCount([9, 32, 0, 2, 0, 12, 5, 2, 0, 1]));
+
 // 9. Write a function that takes in an array of numbers and returns true if all the numbers are bigger than 10, otherwise returns false.
+function isAllBig(numbers) {
+  var result = true;
+  var index = 0;
+  while (index < numbers.length) {
+    if (numbers[index] <= 10) {
+      result = false;
+    }
+    index += 1;
+  }
+  return result;
+}
+
+console.log(isAllBig([11, 23, 32]));
+
 // 10. Write a function that takes in an array of words and returns the number of times the letter “a” appeared in total.
+function aCount(words) {
+  var result = 0;
+  var index = 0;
+  while (index < words.length) {
+    var word = words[index];
+    var index2 = 0;
+    while (index2 < word.length) {
+      if (word[index2] === "a") {
+        result += 1;
+      }
+      index2 += 1;
+    }
+    index += 1;
+  }
+  return result;
+}
+
+console.log(aCount(["apple", "orange", "grapes"]));
